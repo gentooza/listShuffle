@@ -4,7 +4,14 @@ shuffling a list in python, intended for making a random selection of students.
 
 ## usage
 
+For shuffling a whole list:
+```
 randomShuffle <input_list> <output_list>
+```
+For shuffling a whole list, limiting the output, <number> is an int value:
+``` 
+randomShuffle <input_list> <output_list> -l <number>
+```
 
 ## license
 ```
