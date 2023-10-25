@@ -1,0 +1,11 @@
+# list shuffle in python
+
+shuffling a list in python for a random selection of students.
+
+## usage
+
+randomShuffle <input_list> <output_list>
+
+## copyright
+
+## license
