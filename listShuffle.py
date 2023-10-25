@@ -27,17 +27,20 @@ def ReorderList(myList):
         print("Error, can't reorder the input list: ", *myList)
     return myList
 
+def ProgramArguments():
+    parser = argparse.ArgumentParser("randomShuffler", )
+    parser.add_argument("input_list_file", help="A plain text file with a list of names in every line.", type=str)
+    parser.add_argument("output_list_file", help="A plain text file with the same list of names randomly reordered.", type=str)
+    parser.add_argument("-l", "--limit", help="Limit output to X number of lines. (Supply X value!)", type=int, required=False)
+    return parser.parse_args()
 
-parser = argparse.ArgumentParser("randomShuffler", )
-parser.add_argument("input_list_file", help="A plain text file with a list of names in every line.", type=str)
-parser.add_argument("output_list_file", help="A plain text file with the same list of names randomly reordered.", type=str)
-parser.add_argument("limit", help="Limit output to X number of lines.", type=int, required=False)
-args = parser.parse_args()
-
+args = ProgramArguments()
 try:
     inputFile =open(args.input_list_file, "r")
     lines = inputFile.readlines()
     reorderedLines = ReorderList(lines)
+    if (args.limit):
+        reorderedLines = reorderedLines[:args.limit]
     try:
         outputFile = open(args.output_list_file, "w")
         outputFile.writelines(reorderedLines)
