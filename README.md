@@ -8,7 +8,7 @@ For shuffling a whole list:
 ```
 randomShuffle <input_list> <output_list>
 ```
-For shuffling a whole list, limiting the output, <number> is an int value:
+For shuffling a whole list, limiting the output,  ```<number>``` is an int value:
 ``` 
 randomShuffle <input_list> <output_list> -l <number>
 ```
